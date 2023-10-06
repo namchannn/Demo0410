@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.underline {
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+}
+
 .container {
     max-width: 400px;
     margin: 0 auto;
@@ -55,7 +60,7 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Onest", sans-serif;
     overflow: hidden;
     background-color: var(--blue);
 }
