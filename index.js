@@ -23,13 +23,7 @@ app.listen(PORT, function() {
 
 // Routes
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/views/login.html");
-});
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/views/register.html");
-});
-app.get("/about-us", function(req, res) {
-    res.send("About us page");
+    res.sendFile(__dirname + "/public/views/home.html");
 });
 
 app.get("/api/categories", function(req, res) {
