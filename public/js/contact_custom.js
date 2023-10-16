@@ -343,7 +343,7 @@ jQuery(document).ready(function($)
 		{
 			position: new google.maps.LatLng(21.02898603785492, 105.78272941129498),
 			map: map,
-			icon: image
+			image
 		});
 
 		// Re-center map after window resize
