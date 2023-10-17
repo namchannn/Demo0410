@@ -1027,7 +1027,7 @@ section
 }.cart-content-right tr:nth-child(4) {
     border-bottom: 2px solid #dddddd;
 }
-.cart-content-right tr td:last-child {
+.td-content {
     text-align: right;
 }
 .cart-content-right-text {
