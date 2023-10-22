@@ -4,10 +4,10 @@ const PORT = 3333;
 
 // connect mysql
 const configDB = {
-    host: 'localhost',
+    host: '139.180.186.20',
     port: 3306,
-    user: 'root',
-    password: 'root',
+    user: 't2305e',
+    password: 'UAk8iWfsnJ.*17[f',
     database: 't2305e',
     multipleStatements: true // cho phép viết nhiều câu SQL trong 1 lần query
 }
@@ -27,14 +27,14 @@ app.get("/", function(req, res) {
 });
 
 app.get("/api/categories", function(req, res) {
-    const sql = `select * from categories`;
+    const sql = `select * from nhom1_categories`;
     conn.query(sql, function(err, rs) {
         if (err) return res.send("Error");
         return res.send(rs);
     });
 });
 app.get("/api/products", function(req, res) {
-    const sql = `select * from products`;
+    const sql = `select * from nhom1_products`;
     conn.query(sql, function(err, rs) {
         if (err) return res.send("Error");
         return res.send(rs);
