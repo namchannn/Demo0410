@@ -855,12 +855,13 @@ section
 .product-grid
 {
 	width: 100%;
+	height: auto !important;
 	margin-top: 57px;
 }
 .product-item
 {
-	width: 25%;
-	height: 380px;
+	width: 20%;
+	height: 400px;
 	cursor: pointer;
 }
 .product-item::after
@@ -908,7 +909,8 @@ section
 }
 .product_name
 {
-	margin-top: 27px;
+	margin-top: 20px;
+	height: 40px;
 }
 .product_name a
 {
@@ -1008,6 +1010,7 @@ section
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+	margin-top: 10px;
 }
 .add_to_cart_button a
 {
