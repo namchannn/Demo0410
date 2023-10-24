@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" href="../plugins/themify-icons/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="../plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../css/cart_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/checkout_style.css">
 </head>
 <body>
     <div class="super_container">
@@ -70,113 +70,147 @@
 			    </div>
 		    </div>
             
-            <div class="row">
-                <div class="col">
+            
 
-                    <!-- Cart top -->
 
-                    <div class="container">
-                        <div class="cart-top-wrap">
-                            <div class="cart-top">
-                                <div class="cart-top-cart cart-top-item">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <div class="cart-top-adress cart-top-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="cart-top-payment cart-top-item">
-                                    <i class="fas fa-money-check-alt"></i>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                    <div class="container">
-                        <div class="cart-content row">
+			<div class="cart-top-container">
+				<div class="cart-top-wrap">
+					<div class="cart-top">
+						<div class="cart-top-cart cart-top-item">
+							<i class="fas fa-shopping-cart"></i>
+						</div>
+						<div class="cart-top-adress cart-top-item">
+							<i class="fas fa-map-marker-alt"></i>
+						</div>
+						<div class="cart-top-payment cart-top-item">
+							<i class="fas fa-money-check-alt"></i>
+						</div>
+					</div>
+				</div>  
+			</div>
+			
 
-                            <!-- Cart left -->
+                    <!--checkout product-->
 
-                            <div class="cart-content-left">
-                                <table>
-                                    <tr>
-                                        <th>Products</th>
-                                        <th>Name</th>
-                                        <th>Color</th>
-                                        <th>Size</th>
-                                        <th>Quatity</th>
-                                        <th>Prices</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="../images/single_3_thumb.jpg" alt=""></td>
-                                        <td><p>Pocket cotton sweatshirt</p></td>
-                                        <td><p>Black</p></td>
-                                        <td><p>L</p></td>
-                                        <td><input type="number" value="1" min="1"></td>
-                                        <td><p>410.00 $</p></td>
-                                        <td><span>X</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="../images/single_3_thumb.jpg" alt=""></td>
-                                        <td><p>Pocket cotton sweatshirt</p></td>
-                                        <td><p>Black</p></td>
-                                        <td><p>L</p></td>
-                                        <td><input type="number" value="1" min="1"></td>
-                                        <td><p>410.00 $</p></td>
-                                        <td><span>X</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="../images/single_3_thumb.jpg" alt=""></td>
-                                        <td><p>Pocket cotton sweatshirt</p></td>
-                                        <td><p>Black</p></td>
-                                        <td><p>L</p></td>
-                                        <td><input type="number" value="1" min="1"></td>
-                                        <td><p>410.00 $</p></td>
-                                        <td><span>X</span></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        
-                            <!-- Cart right -->
+					<div class="all">
+						<div class="products">
+							<table>
+								<tr>
+									<th>Products</th>
+									<th>Name</th>
+									<th>Color</th>
+									<th>Size</th>
+									<th>Quatity</th>
+									<th>Prices</th>
+									<th>Delete</th>
+								</tr>
+								<tr>
+									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
+									<td><p>Pocket cotton sweatshirt</p></td>
+									<td><p>Black</p></td>
+									<td><p>L</p></td>
+									<td><input type="number" value="1" min="1"></td>
+									<td><p>410.00 $</p></td>
+									<td><span>X</span></td>
+								</tr>
+								<tr>
+									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
+									<td><p>Pocket cotton sweatshirt</p></td>
+									<td><p>Black</p></td>
+									<td><p>L</p></td>
+									<td><input type="number" value="1" min="1"></td>
+									<td><p>410.00 $</p></td>
+									<td><span>X</span></td>
+								</tr>
+								<tr>
+									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
+									<td><p>Pocket cotton sweatshirt</p></td>
+									<td><p>Black</p></td>
+									<td><p>L</p></td>
+									<td><input type="number" value="1" min="1"></td>
+									<td><p>410.00 $</p></td>
+									<td><span>X</span></td>
+								</tr>
+							</table>
+						</div>
 
-                            <div class="cart-content-rigth">
-                                <table>
-                                    <tr>
-                                        <th colspan="2" class="right-th">Shop Receipt</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">Datetime</td>
-                                        <td class="td-content right-td">2023-10-10  00:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">Sub Total</td>
-                                        <td class="td-content right-td">1230.00 $</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">VAT (10%)</td>
-                                        <td class="td-content right-td">123.00 $</td>
-                                    </tr>
-                                    <tr class="right-tr-last">
-                                        <td class="right-td">Total Payment</td>
-                                        <td class="td-content right-td"><p>1353.00 $</p></td>
-                                    </tr>
-                                </table>
-                                <div class="cart-content-right-text">
-                                    <p></p>
-                                </div>
-                                <div class="cart-content-right-button">
-                                    <button>Continue shopping</button>
-                                    <button onclick="checkout()">Check out</button>
-                                </div>
-                                <div class="cart-content-right-login">
-                                    <p>Madam Account</p>
-                                    <p>Please <a href="../views/login.html">log in </a>to earn membership card points.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+						<!--checkout form-->
+
+						<div class="form-container">
+							<div class="form">
+								<form action="">
+									<h1>Shipping Address </h1>
+									<div class="form-group">
+										<input type="text" placeholder="Enter your name">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Enter your city">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Enter your district">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Enter your address">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Enter your phone number">
+									</div>
+									<div class="form-group">
+										<select>
+											<option selected>Payment method</option>
+											<option value="1">Cash</option>
+											<option value="2">Internet Banking</option>
+										</select>
+									</div>
+								</form>
+				
+								<div class="payment-info" style="display: none;">
+									<h1>Pay by Card</h1>
+									<div class="payment-details">
+										<label class="label-group" for="card-number">Card Number</label>
+										<input type="text" id="card-number" placeholder="Enter your card number">
+										
+										<label for="expiry-date">Expiration Date</label>
+										<input type="text" id="expiry-date" placeholder="MM/YY">
+										
+										<label for="cvv">CVV / CVN</label>
+										<input type="text" id="cvv" placeholder="Enter CVV">
+										
+										<label for="card-holder">Cardholder Name</label>
+										<input type="text" id="card-holder" placeholder="Enter cardholder name">
+									</div>
+								</div>
+								<button id="confirm-btn" class="confirm-btn">Confirm</button>
+							</div>
+
+							<!--checkout cart-->
+
+							<div class="cart">
+								<table>
+									<tr>
+										<th colspan="2" class="cart-th">Shop Receipt</th>
+									</tr>
+									<tr>
+										<td class="cart-td">Datetime</td>
+										<td class="td-content right-td">2023-10-10 00:00:00</td>
+									</tr>
+									<tr>
+										<td class="cart-td">Sub Total</td>
+										<td class="td-content right-td">1230.00 $</td>
+									</tr>
+									<tr>
+										<td class="cart-td">VAT (10%)</td>
+										<td class="td-content right-td">123.00 $</td>
+									</tr>
+									<tr class="right-tr-last">
+										<td class="cart-td">Total Payment</td>
+										<td class="td-content right-td"><p>1353.00 $</p></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+         
 
 	    <!-- Benefit -->
 
@@ -284,7 +318,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
     <script src="../plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/fb66dd7b25.js" crossorigin="anonymous"></script>
-	<script src="../js/cart.js"></script>
+	<script src="../js/checkout.js"></script>
 </body>
 </html>
-    
