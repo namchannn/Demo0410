@@ -547,6 +547,22 @@ th, td {
 table td img {
 	width: 50px;
 }
+table td {
+	justify-content: center;
+	text-align: center;
+}
+table td span {
+	background-color: #eee;
+    padding: 0 2px;
+    width: 30px;
+    height: 20px;
+    border: 1px solid#dddddd;
+    cursor: pointer;
+	margin-bottom: 18px;
+}
+table td span:hover{
+	background-color: #db5246;
+}
 
 /*********************************
 6. Check out - cart
