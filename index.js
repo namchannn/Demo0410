@@ -44,27 +44,39 @@ app.get("/api/products", function(req, res) {
 app.get("/api/search", function(req, res) {
     // get paramaters
     const search = req.query.q;
-    const sql = `select * from products where name like '%${search}%'`;
+    const sql = `select * from nhom1_products where name like '%${search}%'`;
     conn.query(sql, function(err, rs) {
         if (err) return res.send("Error");
         return res.send(rs);
     });
 });
 // api hiển thị các product trong categories tìm kiếm
-app.get("/api/category/:id", function(req, res) {
+app.get("/api/categories/:id", function(req, res) {
     // get paramaters
     const id = req.params.id;
-    const sql = `select * from products where category_id = ${id}`;
+    const sql = `select * from nhom1_products where category_id = ${id}`;
     conn.query(sql, function(err, rs) {
         if (err) return res.send("Error");
         return res.send(rs);
     });
 });
-// chi tiết 1 product
-app.get("/api/product/:name", function(req, res) {
+
+// api hiển thị product theo id
+app.get("/api/products/:id", function(req, res) {
+    // get paramaters
+    const id = req.params.id;
+    const sql = `select * from nhom1_products where id = ${id}`;
+    conn.query(sql, function(err, rs) {
+        if (err) return res.send("Error");
+        return res.send(rs);
+    });
+});
+
+//searh chi tiết 1 product
+app.get("/api/products/:name", function(req, res) {
     // get paramaters
     const name = req.params.name;
-    const sql = `select * from products where name like '%${name}%'`;
+    const sql = `select * from nhom1_products where name like '%${name}%'`;
     conn.query(sql, function(err, rs) {
         if (err) return res.send("Error");
         return res.send(rs);
