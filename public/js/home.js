@@ -4,6 +4,7 @@
             if (response.status === 200) {
                 const productListEl = document.getElementById('product-list');
                 const productData = response.data;
+                
                 productData.forEach((prod) => {
                     const productEl = document.createElement("div");
                     productEl.classList = 'product-item col-3';
