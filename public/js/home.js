@@ -19,6 +19,9 @@
                     productImgContainer.classList = 'product_image';
                     const productImage = document.createElement("img");
                     productImage.src = prod.thumbnail;
+                    productImage.addEventListener('click', () => {
+                        window.location.href = `../views/products.html?id=${prod.id}`;
+                    });
                     productImgContainer.appendChild(productImage);
                     productContent.appendChild(productImgContainer);
                     const productInfo = document.createElement("div");
@@ -26,6 +29,9 @@
                     const productName = document.createElement("h6");
                     productName.classList = 'product_name';
                     productName.innerText = prod.name;
+                    productName.addEventListener("click", () => {
+                        window.location.href = `../views/products.html?id=${prod.id}`;
+                    });
                     productInfo.appendChild(productName);
                     productContent.appendChild(productInfo);
                     const productPrice = document.createElement("div");
