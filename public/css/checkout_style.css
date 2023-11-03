@@ -539,16 +539,17 @@ section
     margin: 0 auto;
     background-color: #fff;
     display: flex; /* Sử dụng CSS Flexbox để chia thành 2 cột */
+	justify-content: space-between;
 }
 
 .left-column {
     flex: 4; /* Chia tỷ lệ 2 cho cột trái (lớn hơn gấp đôi cột phải) */
-    margin: 20px 20px 5px 20px;
+    margin: 20px 20px 10px 0;
 }
 
 .right-column {
     flex: 3; /* Chia tỷ lệ 1 cho cột phải */
-    margin: 20px 20px 20px 5px;
+    margin: 20px 0;
 }
 
 .sectionn {
@@ -636,7 +637,7 @@ label {
     margin: 8px 0;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="number"] {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;

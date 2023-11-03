@@ -93,7 +93,7 @@
                     <!--checkout product-->
 		
 					<div style="text-align: center;">
-						<h1 style="font-size: 54px;">Checkout</h1>
+						<h1 style="font-size: 54px;">Check<span style="color: #fe4c50;">out</span></h1>
 					</div>
 					<div class="checkout">
 						<div class="left-column">
@@ -102,80 +102,87 @@
 									<h2>1. DELIVERY OPTIONS</h2>
 									
 								</div>
-								<div class="shipping-btn1">
-									<button class="btn1" id="shipButton"><strong>SHIP</strong></button>
-									<button class="btn1" id="pickUpButton"><strong>PICK UP</strong></button>
-								</div>
-								<div class="shipping-form">
-									<div class="form-group">
-										<input type="text" placeholder="First name">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Last name">
-									</div>
-								</div>
 								<div>
-									<div class="form-group">
-										<input type="text" placeholder="Your Address">
+									<form action="">
+										<div class="shipping-btn1">
+											<button class="btn1" id="shipButton"><strong>SHIP</strong></button>
+											<button class="btn1" id="pickUpButton"><strong>PICK UP</strong></button>
+										</div>
+										<div class="shipping-form">
+											<div class="form-group">
+												<input type="text" placeholder="First name" required data-error="Please, write us first name.">
+											</div>
+											<div class="form-group">
+												<input type="text" placeholder="Last name" required data-error="Please, write us last name.">
+											</div>
+										</div>
+										<div>
+											<div class="form-group">
+												<input type="text" placeholder="Your Address" required data-error="Please, write us address.">
+											</div>
+										</div class="form-group">
+										<div class="shipping-form">
+											<div class="form-group">
+												<input type="email" placeholder="Your Email" required data-error="Please, write us email.">
+											</div>
+											<div class="form-group">
+												<input type="number" placeholder="Your Phone" required data-error="Please, write us a phone.">
+											</div>
+										</div>
+										<div>
+											<div class="shipping-btn2">
+												<button class="btn2"><strong>SAVE & CONTINUE</strong></button>
+											</div>
+										</div>
 									</div>
-								</div class="form-group">
-								<div class="shipping-form">
-									<div class="form-group">
-										<input type="text" placeholder="Your Email">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Your Phone">
-									</div>
+									</form>
 								</div>
-								<div>
-									<div class="shipping-btn2">
-										<button class="btn2"><strong>SAVE & CONTINUE</strong></button>
-									</div>
-								</div>
-							</div>
+								
 
 
 							<div class="sectionn payment">
 								<div class="payment-title">
 									<h2>2. PAYMENT</h2>
 								</div>
-								<div class="payment-info">
-									<div class="form-group">
-										<select class="paymenthod">
-											<option selected>Payment method</option>
-											<option value="1">Cash</option>
-											<option value="2">Internet Banking</option>
-										</select>
-									</div>
-									<div class="payment-details">
-										<div class="label">
-											<label class="label-group" for="card-number">Card Number</label>
-											<input type="text" id="card-number" placeholder="Enter your card number">
-										</div>
-										<div class="label">
-											<label for="expiry-date">Expiration Date</label>
-											<input type="text" id="expiry-date" placeholder="MM/YY">
-										</div>
-										<div class="label">
-											<label for="cvv">CVV / CVN</label>
-											<input type="text" id="cvv" placeholder="Enter CVV">
-										</div>
-										<div class="label">
-											<label for="card-holder">Cardholder Name</label>
-											<input type="text" id="card-holder" placeholder="Enter cardholder name">
-										</div>
-									</div>
+								<div class="payment-info">				
 									<div>
-										<div class="shipping-btn3">
-											<button class="btn3"><strong>DONE</strong></button>
-										</div>
+										<form action="">
+											<div class="form-group">
+												<select class="paymenthod">
+													<option selected>Payment method</option>
+													<option value="1">Cash</option>
+													<option value="2">Internet Banking</option>
+												</select>
+											</div>
+											<div class="payment-details">
+												<div class="label">
+													<label class="label-group" for="card-number">Card Number</label>
+													<input type="text" id="card-number" placeholder="Enter your card number" required data-error="Please, write us card number.">
+												</div>
+												<div class="label">
+													<label for="expiry-date">Expiration Date</label>
+													<input type="text" id="expiry-date" placeholder="MM/YY" required data-error="Please, write us expration date.">
+												</div>
+												<div class="label">
+													<label for="cvv">CVV / CVN</label>
+													<input type="text" id="cvv" placeholder="Enter CVV" required data-error="Please, write us CVV/CVN.">
+												</div>
+												<div class="label">
+													<label for="card-holder">Cardholder Name</label>
+													<input type="text" id="card-holder" placeholder="Enter cardholder name" required data-error="Please, write us cardholder.">
+												</div>
+											</div>
+											<div>
+												<div class="shipping-btn3">
+													<button class="btn3"><strong>DONE</strong></button>
+												</div>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="right-column">
-
-
 							<div class="sectionn summary">
 								<div class="summary-title">
 									<h2>SUMMARY</h2>

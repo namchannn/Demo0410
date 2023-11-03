@@ -604,6 +604,7 @@ section
 }
 .right-tr-last {
     border-bottom: 2px solid #dddddd;
+	font-weight: bold;
 }
 .right-tr-last td p {
 	margin-top: 15px;
