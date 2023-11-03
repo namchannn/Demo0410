@@ -1,12 +1,69 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const paymentInfo = document.querySelector('.payment-info');
-    const paymentMethodSelect = document.querySelector('select');
+document.addEventListener("DOMContentLoaded", function() {
+    // Ẩn phần "payment-info" ban đầu
+    const paymentInfo = document.querySelector(".payment-info");
+    paymentInfo.style.display = "none";
 
-    paymentMethodSelect.addEventListener('change', function() {
-        if (paymentMethodSelect.value === '2') {
-            paymentInfo.style.display = 'block';
+    // Lắng nghe sự kiện khi nút "SAVE & CONTINUE" được nhấn
+    const saveAndContinueBtn = document.querySelector(".btn2");
+    saveAndContinueBtn.addEventListener("click", function() {
+        // Hiện phần "payment-info"
+        paymentInfo.style.display = "block";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Ẩn phần "payment-details" ban đầu
+    const paymentDetails = document.querySelector(".payment-details");
+    paymentDetails.style.display = "none";
+
+    // Lắng nghe sự kiện khi giá trị trong hộp chọn (select) thay đổi
+    const paymentMethodSelect = document.querySelector(".paymenthod");
+    paymentMethodSelect.addEventListener("change", function() {
+        const selectedPaymentMethod = paymentMethodSelect.value;
+        
+        if (selectedPaymentMethod === "2") {
+            // Nếu người dùng chọn "Internet Banking," hiện phần "payment-details"
+            paymentDetails.style.display = "block";
         } else {
-            paymentInfo.style.display = 'none';
+            // Nếu người dùng chọn "Cash" hoặc giá trị khác, ẩn phần "payment-details"
+            paymentDetails.style.display = "none";
         }
     });
 });
+
+
+
+// Lấy nút "SHIP"
+const shipButton = document.querySelector('.btn1:nth-child(1)');
+
+// Lấy nút "PICK UP"
+const pickUpButton = document.querySelector('.btn1:nth-child(2)');
+
+// Lấy phần "cart-moneyship" theo id
+const cartMoneyShip = document.getElementById('cart-moneyship');
+
+// Thêm sự kiện click cho button "SHIP"
+shipButton.addEventListener('click', function() {
+    // Hiển thị phần "cart-moneyship" tại vị trí ban đầu
+    cartMoneyShip.style.display = 'table-row';
+    // Thay đổi lớp CSS của nút "SHIP" để đổi màu
+    shipButton.classList.add('selected');
+    // Bỏ lớp CSS "selected" khỏi nút "PICK UP" (nếu có)
+    pickUpButton.classList.remove('selected');
+});
+
+// Thêm sự kiện click cho button "PICK UP"
+pickUpButton.addEventListener('click', function() {
+    // Ẩn phần "cart-moneyship"
+    cartMoneyShip.style.display = 'none';
+    // Thay đổi lớp CSS của nút "PICK UP" để đổi màu
+    pickUpButton.classList.add('selected');
+    // Bỏ lớp CSS "selected" khỏi nút "SHIP" (nếu có)
+    shipButton.classList.remove('selected');
+});
+
+
+function edit() {
+    window.location.href = '../views/cart.html';
+}
+

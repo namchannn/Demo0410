@@ -91,122 +91,163 @@
 			
 
                     <!--checkout product-->
+		
+					<div style="text-align: center;">
+						<h1 style="font-size: 54px;">Checkout</h1>
+					</div>
+					<div class="checkout">
+						<div class="left-column">
+							<div class="sectionn shipping">
+								<div class="shipping-title">
+									<h2>1. DELIVERY OPTIONS</h2>
+									
+								</div>
+								<div class="shipping-btn1">
+									<button class="btn1" id="shipButton"><strong>SHIP</strong></button>
+									<button class="btn1" id="pickUpButton"><strong>PICK UP</strong></button>
+								</div>
+								<div class="shipping-form">
+									<div class="form-group">
+										<input type="text" placeholder="First name">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Last name">
+									</div>
+								</div>
+								<div>
+									<div class="form-group">
+										<input type="text" placeholder="Your Address">
+									</div>
+								</div class="form-group">
+								<div class="shipping-form">
+									<div class="form-group">
+										<input type="text" placeholder="Your Email">
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Your Phone">
+									</div>
+								</div>
+								<div>
+									<div class="shipping-btn2">
+										<button class="btn2"><strong>SAVE & CONTINUE</strong></button>
+									</div>
+								</div>
+							</div>
 
-					<div class="all">
-						<div class="products">
-							<table>
-								<tr>
-									<th>Products</th>
-									<th>Name</th>
-									<th>Color</th>
-									<th>Size</th>
-									<th>Quatity</th>
-									<th>Prices</th>
-									<th>Delete</th>
-								</tr>
-								<tr>
-									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
-									<td><p>Pocket cotton sweatshirt</p></td>
-									<td><p>Black</p></td>
-									<td><p>L</p></td>
-									<td><input type="number" value="1" min="1"></td>
-									<td><p>410.00 $</p></td>
-									<td><span>X</span></td>
-								</tr>
-								<tr>
-									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
-									<td><p>Pocket cotton sweatshirt</p></td>
-									<td><p>Black</p></td>
-									<td><p>L</p></td>
-									<td><input type="number" value="1" min="1"></td>
-									<td><p>410.00 $</p></td>
-									<td><span>X</span></td>
-								</tr>
-								<tr>
-									<td><img src="../images/single_3_thumb.jpg" alt=""></td>
-									<td><p>Pocket cotton sweatshirt</p></td>
-									<td><p>Black</p></td>
-									<td><p>L</p></td>
-									<td><input type="number" value="1" min="1"></td>
-									<td><p>410.00 $</p></td>
-									<td><span>X</span></td>
-								</tr>
-							</table>
-						</div>
 
-						<!--checkout form-->
-
-						<div class="form-container">
-							<div class="form">
-								<form action="">
-									<h1>Shipping Address </h1>
+							<div class="sectionn payment">
+								<div class="payment-title">
+									<h2>2. PAYMENT</h2>
+								</div>
+								<div class="payment-info">
 									<div class="form-group">
-										<input type="text" placeholder="Enter your name">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Enter your city">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Enter your district">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Enter your address">
-									</div>
-									<div class="form-group">
-										<input type="text" placeholder="Enter your phone number">
-									</div>
-									<div class="form-group">
-										<select>
+										<select class="paymenthod">
 											<option selected>Payment method</option>
 											<option value="1">Cash</option>
 											<option value="2">Internet Banking</option>
 										</select>
 									</div>
-								</form>
-				
-								<div class="payment-info" style="display: none;">
-									<h1>Pay by Card</h1>
 									<div class="payment-details">
-										<label class="label-group" for="card-number">Card Number</label>
-										<input type="text" id="card-number" placeholder="Enter your card number">
-										
-										<label for="expiry-date">Expiration Date</label>
-										<input type="text" id="expiry-date" placeholder="MM/YY">
-										
-										<label for="cvv">CVV / CVN</label>
-										<input type="text" id="cvv" placeholder="Enter CVV">
-										
-										<label for="card-holder">Cardholder Name</label>
-										<input type="text" id="card-holder" placeholder="Enter cardholder name">
+										<div class="label">
+											<label class="label-group" for="card-number">Card Number</label>
+											<input type="text" id="card-number" placeholder="Enter your card number">
+										</div>
+										<div class="label">
+											<label for="expiry-date">Expiration Date</label>
+											<input type="text" id="expiry-date" placeholder="MM/YY">
+										</div>
+										<div class="label">
+											<label for="cvv">CVV / CVN</label>
+											<input type="text" id="cvv" placeholder="Enter CVV">
+										</div>
+										<div class="label">
+											<label for="card-holder">Cardholder Name</label>
+											<input type="text" id="card-holder" placeholder="Enter cardholder name">
+										</div>
+									</div>
+									<div>
+										<div class="shipping-btn3">
+											<button class="btn3"><strong>DONE</strong></button>
+										</div>
 									</div>
 								</div>
-								<button id="confirm-btn" class="confirm-btn">Confirm</button>
+							</div>
+						</div>
+						<div class="right-column">
+
+
+							<div class="sectionn summary">
+								<div class="summary-title">
+									<h2>SUMMARY</h2>
+								</div>
+								<div class="cart">
+									<table>
+										<tr>
+											<td class="cart-td">Datetime</td>
+											<td class="right-td">2023-10-10 00:00:00</td>
+										</tr>
+										<tr>
+											<td class="cart-td">Sub Total</td>
+											<td class="right-td">1230.00 $</td>
+										</tr>
+										<tr>
+											<td class="cart-td">VAT (10%)</td>
+											<td class="right-td">123.00 $</td>
+										</tr>
+										<tr id="cart-moneyship" style="display: none;">
+											<td class="cart-td">Ship</td>
+											<td class="right-td">5.00 $</td>
+										</tr>
+										<tr>
+											<td class="cart-td"><p>Total Payment: </p></td>
+											<td class="right-td"><p style="color: red;">1358.00 $</p></td>
+										</tr>
+									</table>
+								</div>
 							</div>
 
-							<!--checkout cart-->
 
-							<div class="cart">
-								<table>
-									<tr>
-										<th colspan="2" class="cart-th">Shop Receipt</th>
-									</tr>
-									<tr>
-										<td class="cart-td">Datetime</td>
-										<td class="td-content right-td">2023-10-10 00:00:00</td>
-									</tr>
-									<tr>
-										<td class="cart-td">Sub Total</td>
-										<td class="td-content right-td">1230.00 $</td>
-									</tr>
-									<tr>
-										<td class="cart-td">VAT (10%)</td>
-										<td class="td-content right-td">123.00 $</td>
-									</tr>
-									<tr class="right-tr-last">
-										<td class="cart-td">Total Payment</td>
-										<td class="td-content right-td"><p>1353.00 $</p></td>
-									</tr>
-								</table>
+							<div class="sectionn">
+								<div class="cart-title" style="margin-bottom: 30px; display: flex; justify-content: space-between;">
+									<h2>IN YOUR BAG</h2>
+									<button onclick="edit()" style="cursor: pointer;" >Edit</button>
+								</div>
+								<div style="display: flex; margin-bottom: 5px;">
+									<div>
+										<img src="../images/single_3_thumb.jpg" alt="">
+									</div>
+									<div class="cart-product">
+										<p>Pocket cotton sweatshirt</p>
+										<p>Color: Black</p>
+										<p>Size: L</p>
+										<p>Qty: 1</p>
+										<p>Price: 410.00 $</p>
+									</div>
+								</div>
+								<div style="display: flex;">
+									<div>
+										<img src="../images/single_3_thumb.jpg" alt="">
+									</div>
+									<div class="cart-product">
+										<p>Pocket cotton sweatshirt</p>
+										<p>Color: Black</p>
+										<p>Size: L</p>
+										<p>Qty: 1</p>
+										<p>Price: 410.00 $</p>
+									</div>
+								</div>
+								<div style="display: flex;">
+									<div>
+										<img src="../images/single_3_thumb.jpg" alt="">
+									</div>
+									<div class="cart-product">
+										<p>Pocket cotton sweatshirt</p>
+										<p>Color: Black</p>
+										<p>Size: L</p>
+										<p>Qty: 1</p>
+										<p>Price: 410.00 $</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

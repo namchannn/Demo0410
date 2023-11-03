@@ -531,115 +531,145 @@ section
 }
 
 /*********************************
-5. Check out - proucts
+5. Check out - 
 *********************************/
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-	text-align: center;
-	box-shadow: 0 0 10px rgba(252, 2, 2, 0.2);
+.checkout {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex; /* Sử dụng CSS Flexbox để chia thành 2 cột */
 }
-th, td {
+
+.left-column {
+    flex: 4; /* Chia tỷ lệ 2 cho cột trái (lớn hơn gấp đôi cột phải) */
+    margin: 20px 20px 5px 20px;
+}
+
+.right-column {
+    flex: 3; /* Chia tỷ lệ 1 cho cột phải */
+    margin: 20px 20px 20px 5px;
+}
+
+.sectionn {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
     border: 1px solid #ccc;
-    padding: 5px;
-}
-table td img {
-	width: 50px;
-}
-table td {
-	justify-content: center;
-	text-align: center;
-}
-table td span {
-	background-color: #eee;
-    padding: 0 2px;
-    width: 30px;
-    height: 20px;
-    border: 1px solid#dddddd;
-    cursor: pointer;
-	margin-bottom: 18px;
-}
-table td span:hover{
-	background-color: #db5246;
 }
 
-/*********************************
-6. Check out - cart
-*********************************/
-h1 {
-	font-size: 30px;
+.shipping-title, .payment-title, .cart-title, .summary-title {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
 }
+
+h2 {
+    margin: 0;
+    margin-left: 10px;
+	color: #fff;
+	font-size: 24px;
+}
+
+.shipping-btn1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.btn1 {
+    padding: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.shipping-btn2 {
+    text-align: right;
+    margin-bottom: 15px;
+}
+.btn2 {
+    padding: 15px;
+    background-color: #fe4c50;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.btn2:hover {
+    background-color: #FE7C7F;
+}
+.shipping-btn3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.btn3 {
+    padding: 15px 80px;
+    background-color: #fe4c50;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.btn3:hover {
+    background-color: #FE7C7F;
+}
+.paymenthod {
+    padding: 10px 100px; 
+}
+label {
+    margin-left: 10px;
+}
+.label {
+    margin: 20px 0;
+}
+.shipping-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+/* CSS cho lớp "selected" để đổi màu */
+.selected {
+    background-color: #ee2929;
+    color: #fff;
+}
+
+
+.form-group {
+    text-align: center; /* Cân đối nội dung bên trong form-group */
+    margin: 8px 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px 0; /* Tạo khoảng cách giữa các input */
+    box-sizing: border-box; /* Đặt box-sizing để kích thước bao gồm cả border và padding */
+}
+
+/* Để chỉnh sửa kiểu input khi nhập dữ liệu (tùy chọn) */
+input[type="text"]:focus {
+    border-color: #ee2929;
+    outline: none;
+}
+
 .cart {
     flex: 1;
-    padding: 20px;
     border-left: 1px solid #ccc;
 }
-.cart th, 
-.cart td {
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-.cart-th {
-    background-color: #eee;
-    font-weight: bold;
+table {
+    width: 100%;
 }
 .right-td {
     text-align: right;
 }
-.right-tr-last {
-    background-color: #eee;
-}
+
 .cart p {
     font-weight: bold;
+	color: black;
 }
 
-/*********************************
-7. Check out - form
-*********************************/
-.form {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+.cart-product p {
+    margin: 5px 0;
 }
-.form-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(252, 2, 2, 0.2);
-}
-.form-group {
-    margin-bottom: 10px;
-}
-label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-.payment-details input,
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.payment-details label {
-	text-align: left;
-}
-.confirm-btn {
-	background-color: #fe4c50;
-	border: none;
-	cursor: pointer;
-	padding: 5px;
-	border-radius: 10px;
-}
-.confirm-btn:hover{
-	background-color: #FE7C7F;
-}
-
 
 /*********************************
 8. Benefit
