@@ -461,6 +461,7 @@ section
 4. Breadcrumbs
 *********************************/
 
+
 .breadcrumbs
 {
 	width: 100%;
@@ -559,7 +560,7 @@ section
 }
 
 .shipping-title, .payment-title, .cart-title, .summary-title {
-    background-color: black;
+    background-color: #464646;
     color: #fff;
     padding: 10px;
     margin: 0;
@@ -577,6 +578,19 @@ h2 {
     grid-template-columns: 1fr 1fr;
     
 }
+.edit-button {
+    cursor: pointer;
+    background-color: #fe4c50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.edit-button:hover {
+    background-color: #FE7C7F;
+}
+
 .btn1 {
     padding: 15px;
     background-color: #fff;
@@ -584,7 +598,7 @@ h2 {
     border: 1px solid black;
 }
 .shipping-btn2 {
-    text-align: right;
+    text-align: center;
     margin-bottom: 15px;
 }
 .btn2 {
@@ -593,6 +607,7 @@ h2 {
     border: none;
     cursor: pointer;
     color: #fff;
+	border-radius: 3px;
 }
 .btn2:hover {
     background-color: #FE7C7F;
@@ -607,6 +622,7 @@ h2 {
     border: none;
     cursor: pointer;
     color: #fff;
+	border-radius: 3px;
 }
 .btn3:hover {
     background-color: #FE7C7F;
