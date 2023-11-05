@@ -72,6 +72,16 @@ app.get("/api/products/:id", function(req, res) {
     });
 });
 
+// app.get("/api/productimage/:id", function(req, res) {
+//     // get paramaters
+//     const id = req.params.id;
+//     const sql = `select * from nhom1_product_images where id = ${id}`;
+//     conn.query(sql, function(err, rs) {
+//         if (err) return res.send("Error");
+//         return res.send(rs);
+//     });
+// });
+
 //searh chi tiết 1 product
 app.get("/api/products/:name", function(req, res) {
     // get paramaters
@@ -81,4 +91,6 @@ app.get("/api/products/:name", function(req, res) {
         if (err) return res.send("Error");
         return res.send(rs);
     });
+    
 });
+
