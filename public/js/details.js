@@ -30,11 +30,16 @@ const productId = urlParams.get('id');
       imageContainer.appendChild(li); // Thêm li vào ul
   });    
 
-           document.getElementById('btn-add').addEventListener('click',()=>{
-            const carts = JSON.parse(localStorage.getItem('carts')|| '[]')
-            localStorage.setItem('carts',JSON.stringify(carts.concat(productData)))
-    
-           });
+  const mainImageDiv = document.getElementById('main-image');
+          mainImageDiv.style.backgroundImage = `url(${productData.thumbnail})`;
+          mainImageDiv.style.backgroundSize = 'cover';
+          mainImageDiv.style.backgroundPosition = 'center';
+
+           // Add to cart button event
+          document.getElementById('btn-add').addEventListener('click', () => {
+            const carts = JSON.parse(localStorage.getItem('carts') || '[]');
+            localStorage.setItem('carts', JSON.stringify([...carts, productData]));
+        });
         }
     })
 });

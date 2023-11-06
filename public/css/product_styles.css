@@ -499,7 +499,6 @@ section
 .single_product_thumbnails ul li
 {
 	position: relative;
-	height: 141px;
 	margin-bottom: 30px;
 	cursor: pointer;
 }
@@ -682,6 +681,7 @@ section
 	width: 160px;
 	margin-left: 19px;
 	font-size: 12px !important;
+	cursor: pointer;
 }
 .product_favorite
 {
