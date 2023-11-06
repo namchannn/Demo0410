@@ -1,41 +1,79 @@
+// (() => {
+//     document.addEventListener("DOMContentLoaded", () => {
+//         axios.get(`http://localhost:3333/api/categories/${categoriesId}`).then(function (response) {
+//             if (response.status === 200) {
+//                 const productListEl = document.getElementById('product-list');
+//                 const productData = response.data;
+
+                
+//             }
+//         })
+//     });
+// })();
+
 (() => {
     document.addEventListener("DOMContentLoaded", () => {
-        axios.get('http://localhost:3333/api/products').then(function (response) {
-            if (response.status === 200) {
-                const productListEl = document.getElementById('product-list');
-                const productData = response.data;
-
-                productData.forEach((prod) => {
-                    const productEl = document.createElement("div");
-                    productEl.classList = 'product-item col-3';
-                    const productContent = document.createElement("div");
-                    productContent.classList = 'product discount product_filter';
-                    const productBtn = document.createElement("div");
-                    productBtn.classList = 'red_button add_to_cart_button';
-                    productBtn.innerText = 'Add to cart';
-                    productEl.appendChild(productContent);
-                    productEl.appendChild(productBtn);
-                    const productImgContainer = document.createElement("div");
-                    productImgContainer.classList = 'product_image';
-                    const productImage = document.createElement("img");
-                    productImage.src = prod.thumbnail;
-                    productImgContainer.appendChild(productImage);
-                    productContent.appendChild(productImgContainer);
-                    const productInfo = document.createElement("div");
-                    productInfo.classList = 'product_info';
-                    const productName = document.createElement("h6");
-                    productName.classList = 'product_name';
-                    productName.innerText = prod.name;
-                    productInfo.appendChild(productName);
-                    productContent.appendChild(productInfo);
-                    const productPrice = document.createElement("div");
-                    productPrice.classList = 'product_price';
-                    productPrice.innerText = prod.price + '$';
-                    productInfo.appendChild(productPrice);
-                    productContent.appendChild(productInfo);
-                    productListEl.appendChild(productEl);
-                });
-            }
-        })
+      // Xử lý khi một danh mục được chọn
+      const handleCategoryChange = (category) => {
+        // Xây dựng URL dựa trên danh mục
+        const url = category ? `http://localhost:3333/api/categories/${category}` : `http://localhost:3333/api/products`;
+        
+        
+        // Gọi API và xử lý kết quả
+        axios.get(url)
+          .then(response => {
+            // Xóa danh sách sản phẩm hiện tại và hiển thị sản phẩm mới
+            displayProducts(response.data);
+          })
+          .catch(error => {
+            console.error('Có lỗi khi tải sản phẩm:', error);
+          });
+      };
+  
+      // Lắng nghe sự kiện click cho tất cả liên kết danh mục
+      document.querySelectorAll('.sidebar_categories li a').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          // Xóa class 'active' và thêm vào mục được chọn
+          const categoryLinks = document.querySelectorAll('.sidebar_categories li');
+          categoryLinks.forEach(node => node.classList.remove('active'));
+          const parentLi = this.closest('li');
+          parentLi.classList.add('active');
+          
+          // Lấy danh mục được chọn và xử lý thay đổi
+          const category = this.dataset.category;
+          handleCategoryChange(category);
+        });
+      });
+      
+      // Khởi tạo danh sách sản phẩm với danh mục 'All'
+      handleCategoryChange("");
     });
-})();
+  
+    // Hàm hiển thị sản phẩm
+    function displayProducts(products) {
+      const productListEl = document.getElementById('product-list');
+      if (!productListEl) {
+        console.error('Không tìm thấy phần tử danh sách sản phẩm.');
+        return;
+      }
+      
+      // Xóa danh sách sản phẩm hiện tại
+      productListEl.innerHTML = '';
+      
+      // Lặp qua mỗi sản phẩm và thêm vào danh sách
+      products.forEach((product) => {
+        const productEl = document.createElement('div');
+        productEl.classList.add('product-item'); // Sửa lại class name cho phù hợp với CSS của bạn
+        
+
+        
+        productEl.innerHTML = `
+          <h3>${product.name}</h3>
+          <img src="${product.thumbnail}" alt="${product.name}">`;
+        productListEl.appendChild(productEl);
+      });
+    }
+  })();
+  

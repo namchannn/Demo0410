@@ -75,14 +75,16 @@
 							    <h5>Product Category</h5>
 						    </div>
 						    <!-- Option Category-->
-						    <ul class="sidebar_categories">
-							    <li><a href="#">Men</a></li>
-							    <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li>
-							    <li><a href="#">Accessories</a></li>
-							    <li><a href="#">New Arrivals</a></li>
-							    <li><a href="#">Collection</a></li>
-							    <li><a href="#">Shop</a></li>
-						    </ul>
+						    <!-- Danh sách các danh mục -->
+							<ul class="sidebar_categories">
+							<li class="active"><a href="#" data-category=""><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>All</a></li>
+							<li><a href="#" data-category="1">Top</a></li>
+							<li><a href="#" data-category="2">Dress</a></li>
+							<li><a href="#" data-category="3">Shoes</a></li>
+  							</ul>
+  
+
+  
 					    </div>
 
 					    <!-- Price Range Filtering -->
@@ -330,5 +332,8 @@
     <script src="../plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 	<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 	<script src="../js/home.js"></script>
+	<script src="../js/categories.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yEx1q6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </body>
 </html>
