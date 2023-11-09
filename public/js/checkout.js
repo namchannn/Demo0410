@@ -67,3 +67,35 @@ function edit() {
     window.location.href = '../views/cart.html';
 }
 
+(() => {
+    console.log(JSON.parse(localStorage.getItem('carts') || '[]'));
+    const productList = JSON.parse(localStorage.getItem('carts') || '[]');
+    const productListEl = document.getElementById('cart-product-img');
+    
+    productList.forEach((prod, index) => {
+      const productDiv = document.createElement('div');  
+      productDiv.innerHTML = `
+      <img src="${prod.thumbnail}" alt="${prod.name}">
+      `;
+      productListEl.appendChild(productDiv);
+    });
+})();
+
+
+(() => {
+    console.log(JSON.parse(localStorage.getItem('carts') || '[]'));
+    const productList = JSON.parse(localStorage.getItem('carts') || '[]');
+    const productListEl = document.getElementById('cart-product');
+    
+    productList.forEach((prod, index) => {
+      const productDiv = document.createElement('div');  
+      productDiv.innerHTML = `
+        <p>${prod.name}</p>
+        <p>Color: ${prod.color}</p>
+        <p>Size: ${prod.size || 'N/A'}</p>
+        <p>Qty: </p>
+        <p>Price: ${prod.price} $</p>
+      `;
+      productListEl.appendChild(productDiv);
+    });
+})();

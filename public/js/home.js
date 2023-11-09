@@ -11,8 +11,8 @@
                     const productContent = document.createElement("div");
                     productContent.classList = 'product discount product_filter';
                     const productBtn = document.createElement("div");
-                    productBtn.classList = 'red_button add_to_cart_button';
-                    productBtn.innerText = 'Add to cart';
+                    // productBtn.classList = 'red_button add_to_cart_button';
+                    // productBtn.innerText = 'Add to cart';
                     productEl.appendChild(productContent);
                     productEl.appendChild(productBtn);
                     const productImgContainer = document.createElement("div");
