@@ -698,6 +698,16 @@ table {
 	margin-right: 30px;
 }
 
+.product-item {
+	margin-bottom: 30px; /* Điều chỉnh giá trị theo ý muốn của bạn */
+}
+
+#total-payment{
+	color: red;
+	font-weight: bold;
+}
+  
+
 /*********************************
 8. Benefit
 *********************************/
