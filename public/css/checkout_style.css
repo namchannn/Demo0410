@@ -690,7 +690,12 @@ table {
 }
 
 .cart-product-img img {
-	height: 130px;
+	width: 50%;
+	margin-left: 20px;
+}
+
+.cart-product {
+	margin-right: 30px;
 }
 
 /*********************************
