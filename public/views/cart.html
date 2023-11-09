@@ -124,26 +124,31 @@
 
                             <div class="cart-content-rigth">
                                 <table>
-                                    <tr>
-                                        <th colspan="2" class="right-th">Shop Receipt</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">Datetime</td>
-                                        <td class="td-content right-td">2023-10-10  00:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">Sub Total</td>
-                                        <td class="td-content right-td">1230.00 $</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="right-td">VAT (10%)</td>
-                                        <td class="td-content right-td">123.00 $</td>
-                                    </tr>
-                                    <tr class="right-tr-last">
-                                        <td class="right-td">Total Payment</td>
-                                        <td class="td-content right-td"><p style="font-weight: bold;">1353.00 $</p></td>
-                                    </tr>
-                                </table>
+									<tr>
+										<th colspan="2" class="right-th">Shop Receipt</th>
+									</tr>
+									<tr>
+										<td class="right-td">Datetime</td>
+										<td class="td-content right-td">2023-10-10 00:00:00</td>
+									</tr>
+									<tr>
+										<td class="right-td">Sub Total</td>
+										<td class="td-content right-td" id="subtotal">1230.00 $</td>
+									</tr>
+									<tr>
+										<td class="right-td">VAT (10%)</td>
+										<td class="td-content right-td" id="vat">123.00 $</td>
+									</tr>
+									<!-- Phần tử tbody để chứa danh sách sản phẩm -->
+									<tbody id="product-list">
+										<!-- Các hàng sản phẩm sẽ được thêm vào đây từ JavaScript -->
+									</tbody>
+									<tr class="right-tr-last">
+										<td class="right-td">Total Payment</td>
+										<td class="td-content right-td"><p id="total-payment" style="font-weight: bold;">1353.00 $</p></td>
+									</tr>
+								</table>
+								
                                 <div class="cart-content-right-text">
                                     <p></p>
                                 </div>
