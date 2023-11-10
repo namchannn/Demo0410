@@ -1022,6 +1022,26 @@ section
 	visibility: visible;
 	opacity: 1;
 }
+  
+
+.product-details {
+    width: 200px; /* Điều chỉnh kích thước theo ý muốn */
+    height: 250px; /* Điều chỉnh kích thước theo ý muốn */
+    border: 1px solid #ccc; /* Thêm viền nếu cần */
+    overflow: hidden; /* Ẩn phần dư thừa của ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-details img {
+    object-fit: cover; /* Hiển thị ảnh mà không bị vùi lấn hoặc bị căn chỉnh */
+    width: 100%; /* Điều chỉnh kích thước để vừa với phần tử cha */
+    height: 100%; /* Điều chỉnh kích thước để vừa với phần tử cha */
+}
+
+
+
 .favorite
 {
 	position: absolute;
@@ -1047,6 +1067,42 @@ section
 	visibility: visible;
 	opacity: 1;
 }
+
+.product-grid {
+    width: 100%;
+    height: auto !important;
+    margin-top: 57px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Các sản phẩm sẽ được căn giữa */
+}
+
+.product-item {
+    width: 20%; /* 20% của product-grid */
+    height: 400px;
+    cursor: pointer;
+    position: relative;
+    margin: 10px; /* Khoảng cách giữa các sản phẩm */
+    text-align: center; /* Canh giữa nội dung */
+}
+
+.product-item img {
+    width: 100%;
+    height: 60%; /* Điều chỉnh chiều cao của ảnh */
+    object-fit: cover; /* Đảm bảo ảnh vừa khít với kích thước phần tử cha */
+	margin-bottom: 10px;
+}
+
+.product-item h6, .product-item h5 {
+    margin: 5px 0; /* Khoảng cách giữa name và price */
+}
+
+.product-item h5 {
+	color: red;
+}
+
+
+
 .favorite.active::after
 {
 	font-family: 'FontAwesome';
