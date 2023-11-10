@@ -194,17 +194,17 @@ myButton.addEventListener('click', function() {
       if (paymentMethod === "2") {
           // Nếu là "Internet Banking," kiểm tra và hiển thị thông báo dựa trên việc điền đầy đủ thông tin
           if (paymentDetailsIsFilled(paymentDetails)) {
-              alert('Thanh toán thành công! Cảm ơn bạn đã đặt hàng.');
+              alert('Payment success! Thank you for your order.');
           } else {
-              alert('Vui lòng điền đầy đủ thông tin trước khi tiếp tục.');
+              alert('Please fill in all information before continuing.');
           }
       } else {
           // Nếu là "Cash," hiển thị thông báo thành công ngay lập tức
-          alert('Thanh toán thành công! Cảm ơn bạn đã đặt hàng.');
+          alert('Payment success! Thank you for your order.');
       }
   } else {
       // Nếu chưa chọn phương thức thanh toán, hiển thị thông báo yêu cầu chọn phương thức thanh toán
-      alert('Vui lòng chọn phương thức thanh toán.');
+      alert('Please select payment method.');
   }
 });
 
