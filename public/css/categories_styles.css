@@ -1079,7 +1079,7 @@ section
 
 .product-item {
     width: 20%; /* 20% của product-grid */
-    height: 400px;
+    height: 350px;
     cursor: pointer;
     position: relative;
     margin: 10px; /* Khoảng cách giữa các sản phẩm */
@@ -1088,7 +1088,7 @@ section
 
 .product-item img {
     width: 100%;
-    height: 60%; /* Điều chỉnh chiều cao của ảnh */
+    height: 70%; /* Điều chỉnh chiều cao của ảnh */
     object-fit: cover; /* Đảm bảo ảnh vừa khít với kích thước phần tử cha */
 	margin-bottom: 10px;
 }
