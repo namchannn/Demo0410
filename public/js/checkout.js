@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Lắng nghe sự kiện khi nút "SAVE & CONTINUE" được nhấn
     const saveAndContinueBtn = document.querySelector(".btn2");
-    saveAndContinueBtn.addEventListener("click", function() {
+    saveAndContinueBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      
         // Hiện phần "payment-info"
         paymentInfo.style.display = "block";
     });
@@ -179,3 +181,41 @@ function updateCartTotals() {
     });
   });
   
+
+
+// điều kiện để hiện thông báo
+var myButton = document.getElementById('btn3');
+
+myButton.addEventListener('click', function() {
+    const paymentMethod = document.querySelector(".paymenthod").value; // Lấy phương thức thanh toán
+    const paymentDetails = document.querySelector(".payment-details"); // Lấy form thông tin thanh toán
+
+    if (paymentMethod === "2" || paymentMethod === "1") {
+      if (paymentMethod === "2") {
+          // Nếu là "Internet Banking," kiểm tra và hiển thị thông báo dựa trên việc điền đầy đủ thông tin
+          if (paymentDetailsIsFilled(paymentDetails)) {
+              alert('Thanh toán thành công! Cảm ơn bạn đã đặt hàng.');
+          } else {
+              alert('Vui lòng điền đầy đủ thông tin trước khi tiếp tục.');
+          }
+      } else {
+          // Nếu là "Cash," hiển thị thông báo thành công ngay lập tức
+          alert('Thanh toán thành công! Cảm ơn bạn đã đặt hàng.');
+      }
+  } else {
+      // Nếu chưa chọn phương thức thanh toán, hiển thị thông báo yêu cầu chọn phương thức thanh toán
+      alert('Vui lòng chọn phương thức thanh toán.');
+  }
+});
+
+function paymentDetailsIsFilled(paymentDetails) {
+    // Hàm kiểm tra thông tin thanh toán đã được điền đầy đủ hay chưa
+    const inputFields = paymentDetails.querySelectorAll('input');
+    for (const field of inputFields) {
+        if (!field.value.trim()) {
+            return false; // Nếu có trường nào chưa được điền, trả về false
+        }
+    }
+    return true; // Nếu tất cả trường đã được điền đầy đủ, trả về true
+}
+
