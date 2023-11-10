@@ -11,6 +11,8 @@
 //     });
 // })();
 
+
+
 (() => {
     document.addEventListener("DOMContentLoaded", () => {
       // Xử lý khi một danh mục được chọn
@@ -98,6 +100,9 @@
         const productImage = document.createElement('img');
         productImage.src = product.thumbnail;
         productImage.alt = product.name;
+        productImage.addEventListener('click', () => {
+          window.location.href = `../views/products.html?id=${prod.id}`;
+      });
 
         const productName = document.createElement('h6');
         productName.textContent = product.name;
@@ -112,17 +117,6 @@
         productEl.appendChild(productDetails);
         productListEl.appendChild(productEl);
     });
-
-    // Trong hàm displayProducts
-products.forEach((product) => {
-    // ...
-    const productImage = document.createElement('img');
-    productImage.src = product.thumbnail;
-    productImage.alt = product.name;
-    productImage.width = '200'; // Điều chỉnh kích thước theo ý muốn
-    productImage.height = '150'; // Điều chỉnh kích thước theo ý muốn
-    // ...
-});
 
 }
 
