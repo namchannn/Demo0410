@@ -81,7 +81,7 @@ pickUpButton.addEventListener('click', function() {
 });
 
 
-
+// Tính giá tiền
 function updateCartTotals() {
     const productList = JSON.parse(localStorage.getItem('carts') || '[]');
     let subtotal = 0;
@@ -106,25 +106,22 @@ function updateCartTotals() {
     const productListTextEl = document.getElementById('cart-product');
     
     productList.forEach((prod, index) => {
-      // Hiển thị hình ảnh sản phẩm
-      const productImgDiv = document.createElement('div');
-      productImgDiv.classList.add('product-item');  // Thêm lớp CSS
-      productImgDiv.innerHTML = `
-        <img src="${prod.thumbnail}" alt="${prod.name}">
-      `;
-      productListImgEl.appendChild(productImgDiv);
-  
       // Hiển thị thông tin văn bản sản phẩm
       const productTextDiv = document.createElement('div');
       productTextDiv.classList.add('product-item');  // Thêm lớp CSS
       productTextDiv.innerHTML = `
-        <p><strong>${prod.name}</strong></p>
-        <p>Color: ${prod.color}</p>
-        <p>Size: ${prod.size || 'N/A'}</p>
-        <p class="checkout-quantity">Qty: </p>
-        <p>Price: ${prod.price} $</p>
+        <div class="all" style="display: flex; justify-content: space-between;">
+          <div ><img src="${prod.thumbnail}" alt="${prod.name}" style="width: 200px; margin: 0 20px;"></div>
+          <div>
+          <p><strong>${prod.name}</strong></p>
+          <p>Color: ${prod.color}</p>
+          <p>Size: ${prod.size || 'N/A'}</p>
+          <p class="checkout-quantity">Qty: </p>
+          <p>Price: ${prod.price} $</p>
+          </div>
+        </div>
+        
       `;
-  
       productListTextEl.appendChild(productTextDiv);
     });
 
