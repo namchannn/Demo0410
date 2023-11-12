@@ -66,59 +66,46 @@
       
       // Lặp qua mỗi sản phẩm và thêm vào danh sách
       products.forEach((product) => {
-        const productEl = document.createElement('div');
-        productEl.classList.add('product-item'); // Sửa lại class name cho phù hợp với CSS của bạn
-    
-        productEl.innerHTML = `
-          <img src="${product.thumbnail}" alt="${product.name}">
-          <h6>${product.name}</h6>
-          <h5>${product.price}$</h5>`;
-        productListEl.appendChild(productEl);
+            const productEl = document.createElement('div');
+            productEl.classList.add('product-item'); // Sửa lại class name cho phù hợp với CSS của bạn
+            
+            const productDetails = document.createElement('div');
+            productDetails.classList.add('product-details'); // Class name phù hợp với CSS của bạn
+
+            const productImage = document.createElement('img');
+            productImage.src = product.thumbnail;
+            productImage.alt = product.name;
+
+            
+
+            const productName = document.createElement('h6');
+            productName.textContent = product.name;
+
+            const productPrice = document.createElement('h5');
+            productPrice.textContent = product.price;
+
+            productDetails.appendChild(productImage);
+            productDetails.appendChild(productName);
+            productDetails.appendChild(productPrice);
+
+            productEl.appendChild(productDetails);
+            productListEl.appendChild(productEl);
+
+            productEl.addEventListener('click', () => {
+              window.location.href = `../views/products.html?id=${product.id}`;
+          });
+
+          productEl.innerHTML = `
+            <img src="${product.thumbnail}" alt="${product.name}">
+            <h6>${product.name}</h6>
+            <h5>${product.price}$</h5>`;
+          productListEl.appendChild(productEl);
       });
     }
 
-    
   })();
   
-  //Tạo khối bọc thumbnail, name, price
-  function displayProducts(products) {
-    const productListEl = document.getElementById('product-list');
-    if (!productListEl) {
-        console.error('Không tìm thấy phần tử danh sách sản phẩm.');
-        return;
-    }
 
-    productListEl.innerHTML = ''; // Xóa danh sách sản phẩm hiện tại
-
-    products.forEach((product) => {
-        const productEl = document.createElement('div');
-        productEl.classList.add('product-item'); // Sửa lại class name cho phù hợp với CSS của bạn
-
-        const productDetails = document.createElement('div');
-        productDetails.classList.add('product-details'); // Class name phù hợp với CSS của bạn
-
-        const productImage = document.createElement('img');
-        productImage.src = product.thumbnail;
-        productImage.alt = product.name;
-        productImage.addEventListener('click', () => {
-          window.location.href = `../views/products.html?id=${prod.id}`;
-      });
-
-        const productName = document.createElement('h6');
-        productName.textContent = product.name;
-
-        const productPrice = document.createElement('h5');
-        productPrice.textContent = product.price;
-
-        productDetails.appendChild(productImage);
-        productDetails.appendChild(productName);
-        productDetails.appendChild(productPrice);
-
-        productEl.appendChild(productDetails);
-        productListEl.appendChild(productEl);
-    });
-
-}
 
   
   
