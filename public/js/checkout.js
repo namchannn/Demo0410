@@ -105,23 +105,29 @@ function updateCartTotals() {
     const productListImgEl = document.getElementById('cart-product-img');
     const productListTextEl = document.getElementById('cart-product');
     
+    
     productList.forEach((prod, index) => {
-      // Hiển thị thông tin văn bản sản phẩm
-      const productTextDiv = document.createElement('div');
-      productTextDiv.classList.add('product-item');  // Thêm lớp CSS
-      productTextDiv.innerHTML = `
-        <div class="all" style="display: flex; justify-content: space-between;">
-          <div ><img src="${prod.thumbnail}" alt="${prod.name}" style="width: 200px; margin: 0 20px;"></div>
-          <div>
+
+      // Tạo một khối màu cho mỗi sản phẩm
+    const colorStyle = prod.color ? `background-color: ${prod.color};` : '';
+    const colorBlock = `<div style="display: inline-block; width: 20px; height: 20px; border: 1px solid #000; ${colorStyle}"></div>`;
+
+    // Cập nhật để hiển thị kích cỡ sản phẩm
+    const sizeText = prod.size ? prod.size : 'N/A'; // Sử dụng giá trị đã lưu trữ hoặc hiển thị 'N/A' nếu không có thông tin kích cỡ
+    const productTextDiv = document.createElement('div');
+    productTextDiv.classList.add('product-item');
+    productTextDiv.innerHTML = `
+      <div class="all" style="display: flex; justify-content: space-between;">
+        <div><img src="${prod.thumbnail}" alt="${prod.name}" style="width: 200px; margin: 0 20px;"></div>
+        <div>
           <p><strong>${prod.name}</strong></p>
-          <p>Color: ${prod.color}</p>
-          <p>Size: ${prod.size || 'N/A'}</p>
-          <p class="checkout-quantity">Qty: </p>
+          <p>Color: ${colorBlock}</p>
+          <p>Size: ${sizeText}</p> <!-- Cập nhật ở đây -->
+          <p>Qty: ${prod.quantity}</p>
           <p>Price: ${prod.price} $</p>
-          </div>
         </div>
-        
-      `;
+      </div>
+    `;
       productListTextEl.appendChild(productTextDiv);
     });
 

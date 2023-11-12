@@ -76,7 +76,21 @@
             productImage.src = product.thumbnail;
             productImage.alt = product.name;
 
-            
+            const productColor = document.createElement('div');
+            productColor.textContent = "color"; // Văn bản cố định
+            const colorSpan = document.createElement('span');
+            colorSpan.style.backgroundColor = product.color; // Giả sử 'color' là thuộc tính chứa giá trị màu
+            productColor.appendChild(colorSpan);
+
+            const productSize = document.createElement('select');
+            productSize.name = "size";
+            const sizes = ["M", "L", "S", "XL"];
+            sizes.forEach((size) => {
+            const option = document.createElement('option');
+            option.value = size;
+            option.textContent = size;
+            productSize.appendChild(option);
+            });
 
             const productName = document.createElement('h6');
             productName.textContent = product.name;
@@ -87,6 +101,8 @@
             productDetails.appendChild(productImage);
             productDetails.appendChild(productName);
             productDetails.appendChild(productPrice);
+            productDetails.appendChild(productColor);
+            productDetails.appendChild(productSize);
 
             productEl.appendChild(productDetails);
             productListEl.appendChild(productEl);

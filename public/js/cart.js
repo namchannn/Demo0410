@@ -26,18 +26,47 @@ function updateCartTotals() {
   const productListEl = document.getElementById('product-list');
   const productList = JSON.parse(localStorage.getItem('carts') || '[]');
 
-  // Hiển thị danh sách sản phẩm
-  productList.forEach((prod, index) => {
+   // Hiển thị danh sách sản phẩm
+   productList.forEach((prod, index) => {
     const productRow = document.createElement('tr');
+
+    // Tạo một khối màu cho màu sắc
+    const colorBlock = `<div style="background-color: ${prod.color}; width: 20px; height: 20px; border: 1px solid #000;"></div>`;
+
+    // Hàm tạo dropdown cho kích cỡ quần áo
+  function createClothingSizeDropdown(selectedSize) {
+    const sizes = ['S', 'M', 'L', 'XL'];
+    let options = sizes.map(size => `<option value="${size}" ${selectedSize === size ? 'selected' : ''}>${size}</option>`).join('');
+    return `<select class="size-select">${options}</select>`;
+  }
+
+  // Hàm tạo dropdown cho kích cỡ giày
+  function createShoeSizeDropdown(selectedSize) {
+    const sizes = ['35', '36', '37', '38', '39', '40'];
+    let options = sizes.map(size => `<option value="${size}" ${selectedSize === size ? 'selected' : ''}>${size}</option>`).join('');
+    return `<select class="shoe-size-select">${options}</select>`;
+  }
+
+    // Tạo dropdown phù hợp với loại sản phẩm
+    let sizeDropdown;
+    if (prod.type === 'clothing') {
+      sizeDropdown = createClothingSizeDropdown(prod.clothing_size);
+    } else if (prod.type === 'shoe') {
+      sizeDropdown = createShoeSizeDropdown(prod.shoe_size);
+    } else {
+      sizeDropdown = '<p>N/A</p>'; // Trường hợp không phải clothing hoặc shoe
+    }
+
     productRow.innerHTML = `
       <td><img src="${prod.thumbnail}" alt="${prod.name}"></td>
       <td><p class="product-name">${prod.name}</p></td>
-      <td><p>${prod.color}</p></td>
-      <td><p>${prod.size || 'N/A'}</p></td>
+      <td>${colorBlock}</td>
+      <td>${sizeDropdown}</td>
       <td><input type="number" value="${prod.quantity}" min="1" class="quantity-input" data-index="${index}"></td>
       <td><p class="product-price">${prod.price} $</p></td>
       <td><span class="remove-product" data-index="${index}">X</span></td>
     `;
+
     productListEl.appendChild(productRow);
   });
 
