@@ -3,26 +3,25 @@
 const productId = urlParams.get('id');
 
             document.addEventListener("DOMContentLoaded", () => {
-                // Giả sử các tab của bạn có class 'tab' và tab đang hoạt động có class 'active'
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Loại bỏ class 'active' khỏi tất cả các tab
-            tabs.forEach(t => t.classList.remove('active'));
-            // Thêm class 'active' vào tab được nhấn
-            this.classList.add('active');
 
-            // Tùy chọn: Nếu bạn sử dụng thuộc tính data-active-tab để kiểm soát nội dung tab nào được hiển thị
-            const activeTabId = this.getAttribute('data-active-tab');
-            const tabContents = document.querySelectorAll('.tab_container');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === activeTabId) {
-                    content.classList.add('active');
+                // Lấy phần tử để nhấp vào
+                const reviewLink = document.getElementById("review1");
+
+                // Lấy phần tử để cuộn đến
+                const reviewSection = document.getElementById("review2");
+
+                if (reviewLink && reviewSection) {
+                    reviewLink.addEventListener("click", function(event) {
+                        event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+            
+                        const offsetTop = reviewSection.getBoundingClientRect().top + window.scrollY;
+                        window.scroll({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    });
                 }
-            });
-        });
-    });
+
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('id');
                 axios.get(`http://localhost:3333/api/products/${productId}`).then(function (response) {
@@ -128,7 +127,9 @@ images.forEach((imageSrc, index) => {
 // Lấy các phần tử có ID là "tab_2" và "tab_3"
 
 const tab3 = document.getElementById('tab_3');
+const tab1= document.getElementById('tab_image');
 
 // Thêm class "active" để hiển thị chúng
 
 tab3.classList.add('active');
+tab1.classList.add('active');
