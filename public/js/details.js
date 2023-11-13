@@ -74,6 +74,29 @@ images.forEach((imageSrc, index) => {
           document.getElementById('btn-add').addEventListener('click', () => {
             const carts = JSON.parse(localStorage.getItem('carts') || '[]');
             localStorage.setItem('carts', JSON.stringify([...carts, productData]));
+
+            // Hiển thị thông báo
+            const alertMessage = document.createElement('div');
+            alertMessage.textContent = 'Product added to cart successfully';
+            alertMessage.style.position = 'fixed';
+            alertMessage.style.top = '10px';
+            alertMessage.style.left = '50%';
+            alertMessage.style.transform = 'translateX(-50%)';
+            alertMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            alertMessage.style.color = 'white';
+            alertMessage.style.padding = '10px';
+            alertMessage.style.borderRadius = '5px';
+            alertMessage.style.zIndex = '9999';
+            
+
+            // Thêm thông báo vào body của trang
+            document.body.appendChild(alertMessage);
+
+            // Tự động xóa thông báo sau 5 giây
+            setTimeout(function () {
+                document.body.removeChild(alertMessage);
+            }, 3500);
+
         });
         }
     })
