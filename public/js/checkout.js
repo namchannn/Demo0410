@@ -122,7 +122,7 @@ function updateCartTotals() {
         <div>
           <p><strong>${prod.name}</strong></p>
           <p>Color: ${colorBlock}</p>
-          <p>Size: ${sizeText}</p> <!-- Cập nhật ở đây -->
+          <p class="checkout-size">Size: ${sizeText}</p> <!-- Cập nhật ở đây -->
           <p>Qty: ${prod.quantity}</p>
           <p>Price: ${prod.price} $</p>
         </div>
@@ -221,4 +221,53 @@ function paymentDetailsIsFilled(paymentDetails) {
     }
     return true; // Nếu tất cả trường đã được điền đầy đủ, trả về true
 }
+
+// Lấy thông tin từ localStorage và cập nhật số lượng khi trang tải
+document.addEventListener("DOMContentLoaded", function () {
+  const checkoutSizeElements = document.querySelectorAll(".checkout-size");
+
+  // Hàm cập nhật kích thước trên trang checkout
+  function updateCheckoutSizes() {
+      const productList = JSON.parse(localStorage.getItem("carts") || "[]");
+
+      checkoutSizeElements.forEach((element, index) => {
+        let size = "N/A"; // Mặc định là "N/A" nếu không có thông tin kích cỡ
+        if (productList[index].type === 'clothing') {
+            size = productList[index].clothing_size || "N/A";
+        } else if (productList[index].type === 'shoe') {
+            size = productList[index].shoe_size || "N/A";
+        }
+        element.textContent = `Size: ${size}`;
+      });
+  }
+
+  // Cập nhật kích thước khi trang tải
+  updateCheckoutSizes();
+
+  // Lắng nghe sự kiện khi có thay đổi trong giỏ hàng
+  window.addEventListener("storage", function (event) {
+      if (event.key === "carts") {
+          // Cập nhật kích thước khi giỏ hàng thay đổi
+          updateCheckoutSizes();
+      }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sizeSelects = document.querySelectorAll('.size-select, .shoe-size-select');
+
+  sizeSelects.forEach((select, index) => {
+    select.addEventListener('change', (event) => {
+      const selectedSize = event.target.value;
+      const isClothing = event.target.classList.contains('size-select');
+      const key = isClothing ? 'clothing_size' : 'shoe_size';
+      const productList = JSON.parse(localStorage.getItem('carts') || '[]');
+
+      productList[index][key] = selectedSize;
+      localStorage.setItem('carts', JSON.stringify(productList));
+
+      updateCheckoutSizes(); // Cập nhật kích thước mới lên trang
+    });
+  });
+});
 

@@ -93,5 +93,23 @@ function updateCartTotals() {
       updateCartTotals(); // Cập nhật tổng tiền khi số lượng thay đổi
     });
   });
+
+  // Cập nhật số lượng sản phẩm và size
+  const updateProductDetails = (index, key, value) => {
+    productList[index][key] = value;
+    localStorage.setItem('carts', JSON.stringify(productList));
+    updateCartTotals();
+  };
+
+  // Xử lý sự kiện thay đổi size
+  const sizeSelects = document.querySelectorAll('.size-select, .shoe-size-select');
+  sizeSelects.forEach((select, index) => {
+    select.addEventListener('change', (event) => {
+      const selectedSize = event.target.value;
+      const isClothing = event.target.classList.contains('size-select');
+      const key = isClothing ? 'clothing_size' : 'shoe_size';
+      updateProductDetails(index, key, selectedSize);
+    });
+  })
 })();
 
