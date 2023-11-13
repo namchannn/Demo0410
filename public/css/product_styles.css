@@ -34,6 +34,10 @@ COLOR PALETTE
 2. Body and some general stuff
 *********************************/
 
+html {
+	scroll-behavior: smooth;
+  }  
+
 *
 {
 	margin: 0;
@@ -857,13 +861,35 @@ section
 {
 	padding-right: 30px;
 }
-.user_pic
+.user_pic 
 {
 	width: 70px;
 	height: 70px;
-	background: #ebebeb;
 	border-radius: 50%;
 }
+
+.pic1 {
+    background-image: url(https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/385740462_852170229781907_904450320900798785_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFfegD34zjpc2v1QwjQ4kQOLBd4GBXX9FwsF3gYFdf0XLV4D6Uj8rU2YM62HUpvGyyyYbN7dJ9SHKrXnuAAQwrM&_nc_ohc=EGw8raFtIncAX_GbFNV&_nc_ht=scontent.fhan15-2.fna&cb_e2o_trans=q&oh=00_AfAXRBU8D6V-g4nOGg6tfCFhKkn1276aTZu3HMiXREpYXw&oe=65577593);
+    width: 70px; /* or the size you want */
+    height: 70px; /* should be the same as width for a perfect circle */
+    background-size: cover; /* This will cover the entire area of the circle */
+    background-position: center; /* This will center your image in the circle */
+    border-radius: 50%; /* This makes the circle */
+    border: 2px solid #fff; /* optional: in case you want a border around the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: in case you want a shadow */
+}
+
+.pic2 {
+    background-image: url(https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/296463738_388769740026587_4442477649139905052_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF1dfB7TVZ7IvUo43m-lq4eDR8_rqqCxyYNHz-uqoLHJrOgEFDwzcwA_pw8GitUbXO6DzTdF3iA766WbfLmsJT7&_nc_ohc=ZL6lUn1dkGIAX_XI5Vj&_nc_ht=scontent.fhan15-1.fna&cb_e2o_trans=q&oh=00_AfCWh2V_Lfly0Eeit4BkzkkPcc4BjFouXn5WU3sSMhjhsA&oe=65563092);
+    width: 70px; /* or the size you want */
+    height: 70px; /* should be the same as width for a perfect circle */
+    background-size: cover; /* This will cover the entire area of the circle */
+    background-position: center; /* This will center your image in the circle */
+    border-radius: 50%; /* This makes the circle */
+    border: 2px solid #fff; /* optional: in case you want a border around the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: in case you want a shadow */
+}
+
 .user_rating .star_rating
 {
 	margin-left: 5px;

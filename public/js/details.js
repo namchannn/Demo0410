@@ -3,6 +3,26 @@
 const productId = urlParams.get('id');
 
             document.addEventListener("DOMContentLoaded", () => {
+                // Giả sử các tab của bạn có class 'tab' và tab đang hoạt động có class 'active'
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Loại bỏ class 'active' khỏi tất cả các tab
+            tabs.forEach(t => t.classList.remove('active'));
+            // Thêm class 'active' vào tab được nhấn
+            this.classList.add('active');
+
+            // Tùy chọn: Nếu bạn sử dụng thuộc tính data-active-tab để kiểm soát nội dung tab nào được hiển thị
+            const activeTabId = this.getAttribute('data-active-tab');
+            const tabContents = document.querySelectorAll('.tab_container');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === activeTabId) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('id');
                 axios.get(`http://localhost:3333/api/products/${productId}`).then(function (response) {

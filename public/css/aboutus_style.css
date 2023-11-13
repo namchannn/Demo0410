@@ -42,7 +42,7 @@
   margin-bottom: 20px;
 }
 span {
-  color: #4070f4;
+  color: #fe4c50;
 }
 .text p {
   color: #333;
@@ -55,7 +55,7 @@ span {
 }
 .shopnow {
   font-size: 18px;
-  background: #4070f4;
+  background-color: #fe4c50;
   color: #fff;
   text-decoration: none;
   border: none;
@@ -63,6 +63,12 @@ span {
   border-radius: 6px;
   transition: 0.5s;
 }
+
+.shopnow:hover {
+  background-color: #FE7C7F;
+}
+
+
 .hire:hover {
   background: #000;
 }
