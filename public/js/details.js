@@ -103,3 +103,12 @@ images.forEach((imageSrc, index) => {
 });
 
 })();
+
+
+// Lấy các phần tử có ID là "tab_2" và "tab_3"
+
+const tab3 = document.getElementById('tab_3');
+
+// Thêm class "active" để hiển thị chúng
+
+tab3.classList.add('active');
