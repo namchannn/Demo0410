@@ -87,7 +87,7 @@ label {
 button {
     margin-top: 1rem;
     color: #fff;
-    background-color: var(--blue);
+    background-color: #fe4c50;
     padding: .6rem 10rem;
     border: none;
     border-radius: 5px;
@@ -96,14 +96,16 @@ button {
 }
 
 button:hover {
-    background-color: cornflowerblue;
+    background-color: #FE7C7F;
     transition: var(--smooth);
 }
 
 :root {
-    --blue: #4071F4;
-    --smooth: all .3s ease-in;
-}
+    background-image: url(https://c0.wallpaperflare.com/preview/685/877/292/boutique-close-up-clothes-clothes-hanger-thumbnail.jpg); /* You may need to adjust this to match the exact color */
+    --font-family: 'Your font here', sans-serif; /* Replace with the actual font used on the website */
+    --border-radius: 5px;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
 @media (min-width: 62em) {
     form {
