@@ -258,21 +258,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const sizeSelects = document.querySelectorAll('.size-select, .shoe-size-select');
 
-  sizeSelects.forEach((select, index) => {
-    select.addEventListener('change', (event) => {
-      const selectedSize = event.target.value;
-      const isClothing = event.target.classList.contains('size-select');
-      const key = isClothing ? 'clothing_size' : 'shoe_size';
-      const productList = JSON.parse(localStorage.getItem('carts') || '[]');
-
-      productList[index][key] = selectedSize;
-      localStorage.setItem('carts', JSON.stringify(productList));
-
-      updateCheckoutSizes(); // Cập nhật kích thước mới lên trang
-    });
-  });
-});
 

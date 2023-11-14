@@ -1,18 +1,3 @@
-// (() => {
-//     document.addEventListener("DOMContentLoaded", () => {
-//         axios.get(`http://localhost:3333/api/categories/${categoriesId}`).then(function (response) {
-//             if (response.status === 200) {
-//                 const productListEl = document.getElementById('product-list');
-//                 const productData = response.data;
-
-                
-//             }
-//         })
-//     });
-// })();
-
-
-
 (() => {
     document.addEventListener("DOMContentLoaded", () => {
       // Xử lý khi một danh mục được chọn
