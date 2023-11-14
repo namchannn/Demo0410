@@ -706,9 +706,10 @@ section
 .add_to_cart_button
 {
 	width: 160px;
-	margin-left: 19px;
-	font-size: 12px !important;
-	cursor: pointer;
+    /* margin-left: 19px; */
+    font-size: 12px !important;
+    cursor: pointer;
+    margin-top: 20px;
 }
 .product_favorite
 {
@@ -723,12 +724,12 @@ section
 {
 	color: #fe4c50;
 }
-.product_favorite::after
+/* .product_favorite::after
 {
 	font-family: 'FontAwesome';
 	content:'\f08a';
 	font-size: 14px;
-}
+} */
 .product_favorite.active::after
 {
 	content:'\f004';

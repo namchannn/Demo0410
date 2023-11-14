@@ -4,7 +4,9 @@
             if (response.status === 200) {
                 const productListEl = document.getElementById('product-list');
                 const productData = response.data;
-            
+
+                
+                
    // Lấy các phần tử DOM
 const chatBot = document.getElementById("chatBot");
 const openChatButton = document.getElementById("openChat");
