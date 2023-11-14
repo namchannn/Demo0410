@@ -191,7 +191,8 @@ var myButton = document.getElementById('btn3');
 
 myButton.addEventListener('click', function() {
     const paymentMethod = document.querySelector(".paymenthod").value; // Lấy phương thức thanh toán
-    const paymentDetails = document.querySelector(".payment-details"); // Lấy form thông tin thanh toán
+    const paymentDetails = document.querySelector(".shipping"); // Lấy form thông tin thanh toán
+    const paymentShip = document.querySelector(".ship-info"); // Lấy form thông tin ship
 
     if (paymentMethod === "2" || paymentMethod === "1") {
       if (paymentMethod === "2") {
@@ -202,8 +203,12 @@ myButton.addEventListener('click', function() {
               alert('Please fill in all information before continuing.');
           }
       } else {
-          // Nếu là "Cash," hiển thị thông báo thành công ngay lập tức
-          alert('Payment success! Thank you for your order.');
+          if(paymentDetailsIsFilled(paymentShip)) {
+            // Nếu là "Cash," hiển thị thông báo thành công ngay lập tức
+            alert('Payment success! Thank you for your order.');
+          } else {
+            alert('Please fill in all information before continuing.');
+          }
       }
   } else {
       // Nếu chưa chọn phương thức thanh toán, hiển thị thông báo yêu cầu chọn phương thức thanh toán
